@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+@import 'variables.scss';
+
+@import '~bulma/sass/base/_all.sass';
+@import '~bulma/sass/utilities/_all.sass';
+
+@import '~bulma/sass/elements/box.sass';
+@import '~bulma/sass/elements/button.sass';
+@import '~bulma/sass/elements/container.sass';
+@import '~bulma/sass/elements/content.sass';
+@import '~bulma/sass/elements/icon.sass';
+@import '~bulma/sass/elements/image.sass';
+@import '~bulma/sass/elements/notification.sass';
+@import '~bulma/sass/elements/other.sass';
+@import '~bulma/sass/elements/tag.sass';
+@import '~bulma/sass/elements/title.sass';
+
+@import '~bulma/sass/components/dropdown.sass';
+@import '~bulma/sass/components/level.sass';
+@import '~bulma/sass/components/menu.sass';
+@import '~bulma/sass/components/navbar.sass';
+@import '~bulma/sass/components/tabs.sass';
+
+@import '~bulma/sass/form/_all.sass';
+@import '~bulma/sass/grid/_all.sass';
+@import '~bulma/sass/layout/_all.sass';
+
+@import '~bulma/sass/helpers/_all.sass';
+
+// project
+// @import 'components/box.scss';
+// @import 'components/button.scss';
+// @import 'components/calendar.scss';
+// @import 'components/dropdown.scss';
+// @import 'components/generic.scss';
+// @import 'components/glide.scss';
+// @import 'components/grid.scss';
+// @import 'components/header.scss';
+// @import 'components/navbar.scss';
+@import 'typo.scss';
+
+// pages
+// @import 'pages/page.scss';

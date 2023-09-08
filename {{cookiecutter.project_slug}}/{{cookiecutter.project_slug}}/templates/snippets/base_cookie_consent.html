@@ -1,0 +1,27 @@
+{% load i18n %}
+
+{% if cookie_groups %}
+  <div class="notification is-primary is-consent">
+    {% with cookie_groups=cookie_groups|join:", " %}
+      <div class="cookie-bar">
+        {% blocktrans %}
+        Acest site folosește cookie-uri de {{ cookie_groups }} pentru măsurarea traficului și a performanței campaniilor de promovare.
+        Consultați <a href="{{ COOKIES_URL }}">politica noastră de utilizare cookies</a>.
+      {% endblocktrans %}
+
+        <div class="buttons mt-5">
+          <form action="{{ url_accept }}?next={{ request.path }}" method="POST">
+            <input type="submit"
+                   class="button is-size-7 is-dark cc-cookie-accept"
+                   value="{% trans "Acceptă toate" %}">
+          </form>
+          <form action="{{ url_decline }}?next={{ request.path }}" method="POST">
+            <input type="submit"
+                   class="button is-size-7 is-dark is-outlined cc-cookie-decline ml-2"
+                   value="{% trans "Refuză" %}">
+          </form>
+        </div>
+      </div>
+    {% endwith %}
+  </div>
+{% endif %}

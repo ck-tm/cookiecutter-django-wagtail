@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+$weight-black: 900;
+
+// set line-heights corresponding to sizes (+ responsive)
+@for $i from 1 through length($line-heights) {
+  $lh: nth($line-heights, $i);
+
+  .is-size-#{$i} {
+    line-height: #{$lh};
+  }
+
+  @include mobile {
+    .is-size-#{$i}-mobile {
+      line-height: #{$lh};
+    }
+  }
+
+  @include tablet {
+    .is-size-#{$i}-tablet {
+      line-height: #{$lh};
+    }
+  }
+
+  @include touch {
+    .is-size-#{$i}-touch {
+      line-height: #{$lh};
+    }
+  }
+
+  @include desktop {
+    .is-size-#{$i}-desktop {
+      line-height: #{$lh};
+    }
+  }
+
+  @include widescreen {
+    .is-size-#{$i}-widescreen {
+      line-height: #{$lh};
+    }
+  }
+
+  @include fullhd {
+    .is-size-#{$i}-fullhd {
+      line-height: #{$lh};
+    }
+  }
+}

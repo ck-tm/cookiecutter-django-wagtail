@@ -1,0 +1,178 @@
+//////////////////////////////////////// COLOURS
+
+$white: #ffffff;
+$black: #000000;
+
+$grey-darker: #232323;
+$grey-dark: #2f2d34;
+$grey: #979797;
+$grey-light: #ccbab9;
+$grey-lighter: #eadedf;
+
+// $dark: $grey-dark;
+$light: $grey-lighter;
+
+$red: #ff0000;
+$background: #fff2f2;
+$background-dark: #ffe8e7;
+$border: #e6d5d4;
+$danger-light: #ffb8b8;
+
+$custom-colors: (
+  'grey': (
+    $grey-light,
+    $white,
+  ),
+);
+
+//////////////////////////////////////// BULMA OVERWRITE
+
+// body
+$family-primary: 'Roboto', sans-serif;
+
+$body-background-color: $background;
+$body-color: $black;
+$body-size: 16px;
+
+$primary: $red;
+$primary-invert: $white;
+
+$radius-small: 5px;
+$radius: 5px;
+$radius-medium: 20px;
+$radius-large: 40px;
+$radius-rounded: 250px;
+
+// navbar
+$navbar-height: 10rem; // 120px
+$navbar-item-img-max-height: 70px;
+$navbar-background-color: transparent;
+
+$navbar-item-color: $white;
+$navbar-item-hover-color: $white;
+$navbar-item-hover-background-color: $grey-dark;
+$navbar-item-active-color: $white;
+$navbar-item-active-background-color: $grey-dark;
+
+$navbar-dropdown-background-color: $grey-dark;
+$navbar-dropdown-item-hover-color: $white;
+$navbar-dropdown-item-hover-background-color: transparent;
+$navbar-dropdown-arrow: $white;
+$navbar-dropdown-border-top: 0;
+$navbar-dropdown-offset: 4px;
+$navbar-dropdown-radius: $radius-medium;
+$navbar-dropdown-boxed-radius: $radius-medium;
+
+// layout
+$gap: 110px;
+$column-gap: 20px;
+$block-spacing: 20px;
+$section-padding: 0;
+// $section-padding-desktop: 0;
+$footer-padding: 50px 0 30px;
+
+// typo + sizes
+$size-1: 3rem; // 48px
+$size-2: 2.25rem; // 36px
+$size-3: 2rem; // 32px
+$size-4: 1.5rem; // 24px
+$size-5: 1.125rem; // 18px
+$size-6: 1rem; // 16px
+$size-7: 0.875rem; // 14px
+$size-8: 0.75rem; // 12px
+
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 $size-8;
+$size-small: $size-8;
+$size-normal: $size-6;
+$size-large: $size-5;
+
+$lh-1: 1.2;
+$lh-2: 1.2777777778;
+$lh-3: 1.5;
+$lh-4: 1.333;
+$lh-5: 1.333;
+$lh-6: 1.125;
+$lh-7: 1.21;
+$lh-8: 1.333;
+$line-heights: $lh-1 $lh-2 $lh-3 $lh-4 $lh-5 $lh-6 $lh-7 $lh-8;
+
+$spacing-values: (
+  '0': 0,
+  '1': 0.25rem,
+  '2': 0.5rem,
+  '3': 10px,
+  '4': 20px,
+  '5': 30px,
+  '6': 40px,
+  '7': 80px,
+  'auto': auto,
+);
+
+$content-heading-color: $black;
+$title-weight: normal;
+
+// component colors
+$link: $primary;
+// $link-hover: $red;
+$title-color: inherit;
+$footer-background-color: $background;
+
+// form
+$input-focus-box-shadow-size: 0;
+$input-shadow: none;
+$label-color: $grey;
+$label-weight: normal;
+
+// modals
+$modal-content-width: 750px;
+$modal-card-body-padding: 20px;
+$modal-close-dimensions: 56px;
+$modal-close-top: 6px;
+$modal-close-right: 6px;
+$modal-background-background-color: $white;
+$modal-card-body-background-color: $grey-dark;
+$modal-card-head-background-color: $grey-dark;
+$modal-card-footer-background-color: $grey-dark;
+$modal-card-title-color: $primary;
+$modal-card-head-radius: 0;
+$modal-card-foot-radius: 0;
+
+// content
+$content-blockquote-background-color: $white;
+$content-blockquote-border-left: 0;
+$content-blockquote-padding: 20px 0;
+$tag-radius: $radius;
+
+// box
+$box-shadow: none;
+$box-padding: 0;
+$box-link-hover-shadow: none;
+$box-link-active-shadow: none;
+
+// aside menu
+$menu-item-color: $grey-dark;
+$menu-item-hover-color: $primary;
+$menu-item-hover-background-color: $white;
+$menu-item-active-color: $primary;
+$menu-item-active-background-color: transparent;
+$menu-item-hover-background-color: transparent;
+
+// controls
+$control-height: 50px;
+// $control-padding-horizontal: 20px;
+$button-padding-horizontal: 20px;
+$button-static-background-color: none;
+$button-static-border-color: none;
+$button-static-color: none;
+$button-focus-box-shadow-size: 0;
+
+$dropdown-content-padding-top: 5px;
+$dropdown-content-padding-bottom: 5px;
+$dropdown-content-background-color: $grey-dark;
+$dropdown-item-color: $white;
+
+// screen
+$desktop: 1080px;
+// $widescreen: 1366px;
+$widescreen: 1440px;
+$fullhd: 1620px;

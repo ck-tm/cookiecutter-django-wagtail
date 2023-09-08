@@ -6,6 +6,8 @@ module.exports = merge(commonConfig, {
   devtool: 'inline-source-map',
   devServer: {
     port: 3000,
+    // devtool: 'inline-source-map',
+
     proxy: {
       {%- if cookiecutter.use_docker == 'n' %}
       '/': 'http://0.0.0.0:8000',
@@ -13,8 +15,8 @@ module.exports = merge(commonConfig, {
       '/': 'http://django:8000',
       {%- endif %}
     },
-    // We need hot=false (Disable HMR) to set liveReload=true
-    hot: false,
-    liveReload: true,
+    watchFiles: ['oartimis/templates'],
+    // hot: false,
+    // liveReload: true,
   },
-});
+})

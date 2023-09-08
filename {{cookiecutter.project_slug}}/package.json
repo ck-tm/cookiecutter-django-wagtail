@@ -41,10 +41,20 @@
     "last 2 versions"
   ],
   "babel": {
-    "presets": ["@babel/preset-env"]
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   },
   "scripts": {
     "dev": "",
     "build": ""
+  },
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "lodash.debounce": "^4.0.8"
   }
 }
