@@ -92,8 +92,7 @@ DJANGO_APPS = [
     "django.forms",
 ]
 THIRD_PARTY_APPS = [
-    "crispy_forms",
-    "crispy_bootstrap5",
+    "cookie_consent",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",

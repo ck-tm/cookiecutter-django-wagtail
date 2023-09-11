@@ -47,6 +47,7 @@ SUPPORTED_COMBINATIONS = [
     {"use_pycharm": "n"},
     {"use_docker": "y"},
     {"use_docker": "n"},
+    {"postgresql_version": "15"},
     {"postgresql_version": "14"},
     {"postgresql_version": "13"},
     {"postgresql_version": "12"},
@@ -202,7 +203,7 @@ def test_black_passes(cookies, context_override):
     ["use_docker", "expected_test_script"],
     [
         ("n", "pytest"),
-        ("y", "docker-compose -f local.yml run django pytest"),
+        ("y", "docker-compose -f docker-compose.yml run django pytest"),
     ],
 )
 def test_travis_invokes_pytest(cookies, context, use_docker, expected_test_script):
@@ -227,7 +228,7 @@ def test_travis_invokes_pytest(cookies, context, use_docker, expected_test_scrip
     ["use_docker", "expected_test_script"],
     [
         ("n", "pytest"),
-        ("y", "docker-compose -f local.yml run django pytest"),
+        ("y", "docker-compose -f docker-compose.yml run django pytest"),
     ],
 )
 def test_gitlab_invokes_precommit_and_pytest(
@@ -256,7 +257,7 @@ def test_gitlab_invokes_precommit_and_pytest(
     ["use_docker", "expected_test_script"],
     [
         ("n", "pytest"),
-        ("y", "docker-compose -f local.yml run django pytest"),
+        ("y", "docker-compose -f docker-compose.yml run django pytest"),
     ],
 )
 def test_github_invokes_linter_and_pytest(
