@@ -11,7 +11,7 @@
       <title>
         {% block title %}
         {% endraw -%}
-        {{ cookiecutter.base_name }}
+        {{ cookiecutter.project_name }}
         {%- raw %}
         {% endblock title %}
       </title>
@@ -36,7 +36,7 @@
       {% endblock extra_js %}
 
       {% block cookies %}
-        {% include "snippets/google_analytics.html" with ID=None %}
+        {% include "snippets/base_google_analytics.html" with ID=None %}
 
         {% if request|cookie_consent_enabled -%}
           {% not_accepted_or_declined_cookie_groups request as cookie_groups %}
