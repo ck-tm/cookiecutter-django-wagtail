@@ -81,6 +81,7 @@ WAGTAIL = [
 ]
 
 DJANGO_APPS = [
+    "jazzmin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
