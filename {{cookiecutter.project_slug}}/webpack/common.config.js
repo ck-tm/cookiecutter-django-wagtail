@@ -18,8 +18,8 @@ module.exports = {
       '../{{cookiecutter.project_slug}}/static/webpack_bundles/'
     ),
     publicPath: '/static/webpack_bundles/',
-    filename: 'js/[name]-[fullhash].js',
-    chunkFilename: 'js/[name]-[hash].js',
+    filename: devMode ? 'js/[name].js' : 'js/[name]-[fullhash].js',
+    chunkFilename: devMode ? 'js/[name].js' : 'js/[name]-[hash].js',
   },
   plugins: [
     new BundleTracker({

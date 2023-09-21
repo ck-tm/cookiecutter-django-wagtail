@@ -15,7 +15,7 @@ module.exports = merge(commonConfig, {
       '/': 'http://django:8000',
       {%- endif %}
     },
-    watchFiles: ['oartimis/templates'],
+    watchFiles: ['{{ cookiecutter.project_slug }}/templates'],
     // hot: false,
     // liveReload: true,
   },
