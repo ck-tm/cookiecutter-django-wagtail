@@ -1,0 +1,48 @@
+{% raw %}
+  {% load wagtailimages_tags wagtailcore_tags static app_tags %}
+
+  <div class="glide is-default has-captions">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        {% for slide in value %}
+          <li class="glide__slide">
+            <figure class="image is-5by3 mb-0">
+              <img src="{{ slide.image|get_image_url:'width-1300' }}"
+                   srcset="{{ slide.image|get_image_url:'width-2600' }} 2600w,
+                           {{ slide.image|get_image_url:'width-2000' }} 2000w,
+                           {{ slide.image|get_image_url:'width-1600' }} 1600w,
+                           {{ slide.image|get_image_url:'width-1300' }} 1300w,
+                           {{ slide.image|get_image_url:'width-960' }} 960w,
+                           {{ slide.image|get_image_url:'width-640' }} 640w"
+                   alt="{{ slide.caption }}"
+                   class="is-cover">
+            </figure>
+
+            <div class="glide__caption">
+              <p class="is-size-4 mb-2">
+                <b>
+                  {{ slide.title }}
+                </b>
+              </p>
+              <p class="is-size-6">{{ slide.caption }}</p>
+              <p class="is-size-2 mt-3 has-text-weight-light">{{ forloop.counter }} / {{ value|length }}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="glide__arrows" data-glide-el="controls">
+      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+        <span class="icon">{% include "icons/arrow-left.svg" %}</span>
+      </button>
+      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+        <span class="icon">{% include "icons/arrow-right.svg" %}</span>
+      </button>
+    </div>
+
+    <div class="oh-caption">
+      <div class="wrapper"></div>
+    </div>
+  </div>
+{%- endraw %}

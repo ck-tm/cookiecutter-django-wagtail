@@ -1,5 +1,5 @@
 {% raw -%}
-  {% load static i18n wagtailuserbar cookie_consent_tags %}
+  {% load static app_tags i18n wagtailuserbar cookie_consent_tags %}
   {% load render_bundle from webpack_loader %}
 
   <!DOCTYPE html>
@@ -20,7 +20,12 @@
             content="{% endraw %}{{ cookiecutter.description }}{% raw %}">
       <meta name="author"
             content="{% endraw %}{{ cookiecutter.author_name }}{% raw %}">
-
+      {% if request is not None and self %}
+        {# 500 error has no request #}
+        {% meta_tags as meta_tags %}
+        {% if meta_tags is not None %}{{ meta_tags }}{% endif %}
+        {% canonical %}
+      {% endif %}
       {% block css %}
         {% render_bundle 'base' 'css' %}
       {% endblock css %}
@@ -67,7 +72,7 @@
     </head>
 
     <body>
-    {% wagtailuserbar 'bottom-left' %}
+      {% wagtailuserbar 'bottom-left' %}
       <main>
         {% block content %}
         {% endblock content %}

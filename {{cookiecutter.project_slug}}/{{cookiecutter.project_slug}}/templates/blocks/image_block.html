@@ -1,0 +1,25 @@
+{% raw %}
+  {% load wagtailimages_tags app_tags %}
+
+  <figure class="image is-bleeding">
+    <img src="{{ self.image|get_image_url:'width-1600' }}"
+         srcset="{{ self.image|get_image_url:'width-2600' }} 2600w,
+                 {{ self.image|get_image_url:'width-2000' }} 2000w,
+                 {{ self.image|get_image_url:'width-1600' }} 1600w,
+                 {{ self.image|get_image_url:'width-1300' }} 1300w,
+                 {{ self.image|get_image_url:'width-960' }} 960w,
+                 {{ self.image|get_image_url:'width-640' }} 640w"
+         alt="{{ self.caption }}"
+         sizes="(max-width: 768px) 100vw,
+                (max-width: 1079px) 80vw,
+                (max-width: 1439px) 60vw,
+                (max-width: 1679px) 45vw,
+                780px"
+         class="is-rounded">
+  </figure>
+
+  <div class="caption small">
+    {{ self.caption }}
+    {% if self.attribution %}- {{ self.attribution }}{% endif %}
+  </div>
+{%- endraw %}

@@ -12,6 +12,7 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from {{ cookiecutter.project_slug }}.search import views as search_views  # noqa isort:skip
+from {{ cookiecutter.project_slug }}.home import views as home_views  # noqa isort:skip
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="home/home_page.html"), name="home"),
@@ -23,6 +24,8 @@ urlpatterns = [
     # Wagtail Admin
     path(settings.WAGTAIL_ADMIN_URL, include(wagtailadmin_urls)),
     re_path(r"^documents/", include(wagtaildocs_urls)),
+    re_path('images/([^/]*)/(\d*)/([^/]*)/[^/]*$',
+            home_views.ServeImagesView.as_view(), name='wagtailimages_serve'),
     re_path(r"^search/$", search_views.search, name="search"),
     # User management
     path("users/", include("{{ cookiecutter.project_slug }}.users.urls", namespace="users")),

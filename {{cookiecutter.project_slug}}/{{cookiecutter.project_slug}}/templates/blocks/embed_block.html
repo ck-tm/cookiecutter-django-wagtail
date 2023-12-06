@@ -1,0 +1,7 @@
+{% raw %}
+  {% load wagtailembeds_tags %}
+
+  <figure class="image {% if self.iframe_aspect_ratio %}is-{{ self.iframe_aspect_ratio }}{% else %}is-16by9{% endif %}">
+    {{ self.embed_code|safe }}
+  </figure>
+{%- endraw %}

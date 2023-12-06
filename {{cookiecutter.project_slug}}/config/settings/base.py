@@ -76,6 +76,7 @@ WAGTAIL = [
     "wagtail.search",
     "wagtail.admin",
     "wagtail",
+    "wagtailmetadata",
     "modelcluster",
     "taggit",
 ]
@@ -97,6 +98,7 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "allauth.socialaccount.providers.google",
 {%- if cookiecutter.use_celery == 'y' %}
     "django_celery_beat",
 {%- endif %}
@@ -362,3 +364,18 @@ WEBPACK_LOADER = {
 # Your stuff...
 WAGTAIL_SITE_NAME = "{{cookiecutter.project_slug}}"
 WAGTAILADMIN_BASE_URL = "https://{{cookiecutter.project_slug}}"
+
+WAGTAILMETADATA_IMAGE_FILTER = "thumbnail-688x272|format-png"
+WAGTAILIMAGES_EXTENSIONS = ["gif", "jpg", "jpeg", "png", "webp", "svg"]
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}

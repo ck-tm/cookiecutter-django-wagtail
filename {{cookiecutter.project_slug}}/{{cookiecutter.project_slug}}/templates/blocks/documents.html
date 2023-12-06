@@ -1,0 +1,18 @@
+{% raw %}
+  {% load wagtailimages_tags static app_tags %}
+
+  <div class="columns is-multiline">
+    {% for item in value %}
+      {% with item.document.url|view_document as url %}
+        <div class="column is-6">
+          <a href="{{ url.0 }}"
+             class="button is-white is-large is-fullwidth"
+             {% if url.1 %}target="_blank"{% endif %}>
+            <span class="icon is-size-3 mr-4">{% include "icons/download.svg" %}</span>
+            <span>{{ item.title }}</span>
+          </a>
+        </div>
+      {% endwith %}
+    {% endfor %}
+  </div>
+  {%- endraw %}
